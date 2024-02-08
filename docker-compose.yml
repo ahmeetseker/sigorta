@@ -36,7 +36,13 @@ services:
       DB_PORT: 5432
       DB_USER: "postgres"
       DB_PASSWORD: "postgrespw"
+      TZ: "Europe/Istanbul"
+       VIRTUAL_HOST: www.hasarbayi.com,hasarbayi.com # Erişilecek domain adı
+      LETSENCRYPT_HOST: www.hasarbayi.com,hasarbayi.com # SSL sertifikası alınacak domain adı
+      LETSENCRYPT_EMAIL: info@hasarbayi.com # SSL sertifikası alacak e-posta adresi
+       NODE_ENV: production
       WEBSOCKETS_ENABLED: true
+   
     depends_on:
       - db
     networks:
